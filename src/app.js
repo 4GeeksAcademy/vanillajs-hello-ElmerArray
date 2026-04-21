@@ -23,19 +23,12 @@ window.onload = function() {
       for (let no of noun){
         for (let dom of domains) {
             combinaciones.push(`${p}${ad}${no}${dom}`)
-
-
-
-            let li = document.createElement('li');
-
-            li.classList.add('list-group-item')
-
-            li.innerText = combinaciones;
-
-            listaUl.appendChild(li);
+            
         }
       } 
     }
   }
-   //write your code here
+   listaUl.innerHTML = combinaciones
+    .map(dominio => `<li>${dominio}</li>`) 
+    .join(''); 
 };
